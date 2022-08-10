@@ -15,9 +15,9 @@ const HeroWrapper = styled.div`
 `;
 
 const Hero = ({ scrollToSolutions, scrollToContactForm }) => {
-    const onGetStarted = () => {
-      window.open('https://gapstack-canary.azurewebsites.net', '_blank');
-    }
+    const openProductionApp = () => {
+        window.open('https://trade.gapstack.com', '_blank', 'noopener,noreferrer');
+    };
     return(
         <HeroWrapper backgroundImage={Header}>
             <Row className="container">
@@ -41,7 +41,7 @@ const Hero = ({ scrollToSolutions, scrollToContactForm }) => {
                                             <Col xs={24} sm={24} md={24} lg={8} xl={8}>
                                                 <p className="title">The single Digital Trade Financing Platform</p>
                                                 <p className="description">At Gapstack, we digitize your buyer- supplier arrangements; unlock and accelerate funding from your international and domestic value chain while expanding your unique business relationships.</p>
-                                                <GapstackButton type="purple" buttonName="Get Started" onClick={onGetStarted} />
+                                                <GapstackButton type="purple" buttonName="Join Gapstack" onClick={openProductionApp} />
                                             </Col>
                                             <Col xs={24} sm={24} md={24} lg={16} xl={16}>
                                                 <img width='100%' src={HeaderBanner} alt="Dashboard" className="dashboard-image" />

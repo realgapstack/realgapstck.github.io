@@ -15,6 +15,11 @@ const Menu = ({ scrollToSolutions, scrollToContactForm }) => {
     const setModalVisibility = (visible) => {
         setVisibility(visible);
     }
+
+    const openProductionApp = () => {
+        window.open('https://trade.gapstack.com', '_blank', 'noopener,noreferrer');
+    };
+
     return(
         <MenuWrapper>
             <ContactForm visible={visible} setModalVisibility={setModalVisibility} />
@@ -32,13 +37,14 @@ const Menu = ({ scrollToSolutions, scrollToContactForm }) => {
                      lg={{ span: 8, offset: 2 }}
                      xl={{ span: 5, offset: 2 }}>
                     <Row gutter={42} className="action-container">
-                        {/*<Col xs={9} sm={9} md={9} lg={10} xl={8}>*/}
-                        {/*    <Button type='link' style={{ color: '#ffffff'}} onClick={() => scrollToSolutions()}>Solutions</Button>*/}
-                        {/*</Col>*/}
+                        <Col xs={9} sm={9} md={9} lg={12} xl={12}>
+                            <span onClick={() => setModalVisibility(true)} style={{ color: '#FBFAFF', cursor: 'pointer' }}>sales@gapstack.com</span>
+                        </Col>
                         <Col xs={12} sm={12} md={12} lg={10} xl={6}>
+
                             <Button style={{ color: '#fff', backgroundColor: '#7c60ff', height: 50, borderRadius: 4, borderColor: '#7c60ff', minWidth: 140 }}
-                                    onClick={() => setModalVisibility(true)}
-                            >Contact Us</Button>
+                                    onClick={openProductionApp}
+                            >Join Gapstack</Button>
                         </Col>
                     </Row>
                 </Col>
