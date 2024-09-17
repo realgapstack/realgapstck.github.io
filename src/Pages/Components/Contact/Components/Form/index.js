@@ -40,7 +40,12 @@ const ContactForm = ({ visible, setModalVisibility }) => {
 
     const sendNotification = (values) => {
         setLoading(true);
-        axios.post('https://demo.gapstack.com/website-backend/message', values).then(response => {
+        axios.post('https://demo.gapstack.com/website-backend/message', values, {
+            headers: {
+                'Access-Control-Allow-Headers': 'Authorization,Origin,access-control-allow-origin,Content-Type',
+                'Content-Type': 'application/json',
+            },
+        }).then(response => {
             setLoading(false);
             if (response.status === 201) {
                 notification.success({
